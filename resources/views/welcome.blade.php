@@ -1,120 +1,38 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="alert alert-secondary">
+                <p>
+                    Docker containerization solution for research projects implemented in such a way that scientic simulations and demonstrations can be easily available to future researchers and reliably reproduced.
+                </p>
+            </div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .tag-line { 
-                font-weight: 100;
-                font-size: 18px;
-                width: 50%;
-                margin: 0 auto;
-            }
-
-            .btn {
-                font-weight: bold;
-                font-size: 14px;
-                color: #777;
-                letter-spacing: 3px;
-                text-decoration: none;
-                display: inline-block;
-                padding: 10px 15px;
-                border-radius: 5px;
-                background: #dedede;
-            }
-
-            .btn:hover {
-                background: #cdcdcd;
-                box-shadow: 0 1px 1px #333;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    DOKKER
-                </div>
-
-                <div class="tag-line">
-                    <p>
-                        Docker containerization solution for research projects implemented in such a way that scientic simulations and demonstrations can be easily available to future researchers and reliably reproduced.
-                    </p>
-                    <p>
-                        <a href="{{ route('login') }}" class="btn">LOGIN</a>
-                    </p>
-                </div>
+            <div class="list-group">
+                @forelse($projects as $project)
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3>
+                                {{ $project->title }}
+                                <span class="small text-muted font-italic">by {{ $project->author->name }}</span>
+                            </h3>
+                            <a href="{{ $project->paper_url }}" rel="nofollow" target="_blank">{{ $project->paper_url }}</a>
+                            &middot;
+                            <em>DOI &mdash; {{ $project->paper_doi }}</em>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-secondary btn-sm">Start Demo</a>
+                        </div>
+                    </div>
+                @empty
+                    <div class="list-group-item">
+                        Nobody has registered/setup any projects yet.
+                    </div>
+                @endforelse
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+@endsection
