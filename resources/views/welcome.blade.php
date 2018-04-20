@@ -10,6 +10,29 @@
                 </p>
             </div>
 
+            <br>
+            <h3 class="text-center">Sample Projects</h3>
+
+            <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3>
+                                Hello World!
+                                <span class="small text-muted font-italic">by John Doe</span>
+                            </h3>
+                            <a href="http://example.com" rel="nofollow" target="_blank">http://example.com</a>
+                            &middot;
+                            <em>DOI &mdash; 11.1111/1.111111</em>
+                        </div>
+                        <div>
+                            <a href="http://hello-world.thesis.gotamey.com" rel="nofollow" target="_blank" class="btn btn-secondary btn-sm">Launch Demo</a>
+                        </div>
+                    </div>
+            </div>
+
+            <hr style="margin: 3rem auto">
+
+            <h3>Live Projects</h3>
             <div class="list-group">
                 @forelse($projects as $project)
                     <div class="list-group-item d-flex justify-content-between align-items-center">
