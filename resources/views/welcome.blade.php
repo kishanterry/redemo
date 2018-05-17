@@ -18,14 +18,12 @@
                         <div>
                             <h3>
                                 Hello World!
-                                <span class="small text-muted font-italic">by John Doe</span>
+                                <span class="small text-muted font-italic">by Amith Gotamey</span>
                             </h3>
-                            <a href="http://example.com" rel="nofollow" target="_blank">http://example.com</a>
-                            &middot;
-                            <em>DOI &mdash; 11.1111/1.111111</em>
+                            <a href="https://www.overleaf.com/14965305pfbwqcxkjjwz" rel="nofollow" target="_blank">https://www.overleaf.com/14965305pfbwqcxkjjwz</a>
                         </div>
                         <div>
-                            <a href="http://hello-world.thesis.gotamey.com" rel="nofollow" target="_blank" class="btn btn-secondary btn-sm">Launch Demo</a>
+                            <a href="http://hello.thesis.gotamey.com" rel="nofollow" target="_blank" class="btn btn-secondary btn-sm">Run Demo</a>
                         </div>
                     </div>
             </div>
