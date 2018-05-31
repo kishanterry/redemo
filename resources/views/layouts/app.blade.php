@@ -28,7 +28,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                            <li><a class="nav-link" href="{{ route('projects.index') }}">My Projects</a></li>
+                            <li><a class="nav-link" href="{{ route('projects.index') }}">My Papers</a></li>
                         @endauth
                     </ul>
 

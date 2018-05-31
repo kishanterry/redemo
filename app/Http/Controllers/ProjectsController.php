@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
+
 class ProjectsController extends Controller
 {
     public function index()
@@ -22,18 +24,32 @@ class ProjectsController extends Controller
     {
         $project = request()->validate([
             'title' => 'required',
+            'author' => 'required',
             'paper_url' => 'required|url',
-            'demo_title' => 'required|unique:projects',
-            'dockerfile' => 'required',
+            'demo_url' => 'required|url',
         ]);
 
-        auth()->user()->projects()->create(
-            array_merge(
-                $project,
-                request()->only(['paper_doi'])
-            )
-        );
+        auth()->user()->projects()->create(array_merge($project, request()->only('description')));
 
-        return redirect(route('projects.index'))->with('status', 'Great! Your project has been created!');
+        return redirect(route('projects.index'))->with('status', 'Great! Your paper has been added!');
+    }
+
+    public function edit(Project $project)
+    {
+        return view('projects.edit', compact('project'));
+    }
+
+    public function update(Project $project)
+    {
+        $attributes = request()->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'paper_url' => 'required|url',
+            'demo_url' => 'required|url',
+        ]);
+
+        $project->update(array_merge($attributes, request()->only('description')));
+
+        return redirect(route('projects.index'))->with('status', 'Great! Your paper has been updated!');
     }
 }

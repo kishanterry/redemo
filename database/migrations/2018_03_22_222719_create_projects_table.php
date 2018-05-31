@@ -17,11 +17,10 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('title');
+            $table->string('author');
+            $table->text('description')->nullable();
             $table->string('paper_url');
-            $table->string('paper_doi')->nullable();
-            $table->string('demo_title');
-            $table->string('demo_slug');
-            $table->text('dockerfile');
+            $table->string('demo_url');
             $table->timestamps();
         });
     }
