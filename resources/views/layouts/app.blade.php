@@ -62,11 +62,19 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
 
+    <footer class="container py-4 d-flex justify-content-center align-items-center">
+        <a href="https://www.vu.nl">
+            <img style="width: 150px;" src="https://www.vu.nl/nl/Images/VUlogo_Wit_RGB_mettekst_tcm289-835563.svg" alt="Logo Vrije Universiteit Amsterdam" class="hidden-xs">
+        </a>
+        <div class="px-4">
+            <a href="http://gotamey.me">Amith Gotamey</a>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

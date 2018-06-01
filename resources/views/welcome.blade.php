@@ -1,35 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<div style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover;">
+    <div class="container py-5">
+        <h1 class="text-center text-light font-weight-bold" style="font-size: 7.25rem;">ReDemo</h1>
+        <p class="text-center text-light" style="font-size: 1.25rem;">A simple and easy platform for accessing research demos</p>
+    </div>
+</div>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="alert alert-info">
-                <p class="font-weight-bold text-center">
-                    This is a prototype of a platform where you can easily find research papers and related scientific simulations and demonstrations (which are available as a web application) without you needing to undergo the sometimes highly technical installation steps.
-                </p>
-            </div>
-
-<!--             <br>
-            <h3 class="text-center">Sample Projects</h3>
-
-            <div class="list-group">
-                    <div class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                            <h3>
-                                Hello World!
-                                <span class="small text-muted font-italic">by Amith Gotamey</span>
-                            </h3>
-                            <a href="https://www.overleaf.com/14965305pfbwqcxkjjwz" rel="nofollow" target="_blank">https://www.overleaf.com/14965305pfbwqcxkjjwz</a>
-                        </div>
-                        <div>
-                            <a href="http://hello.thesis.gotamey.com" rel="nofollow" target="_blank" class="btn btn-secondary btn-sm">Run Demo</a>
-                        </div>
-                    </div>
-            </div>
-
-            <hr style="margin: 3rem auto"> -->
-
             <form action="{{ url('/') }}" class="d-flex flex-column justify-content-center align-items-center py-5">
                 <input type="text" placeholder="Search for papers" class="w-50 form-control">
                 <div class="w-50">
